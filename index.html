@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectForm</title>
+    <style>
+        
+        body{
+            font-size: large;
+            background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(255,225,161,1) 100%);
+        }
+        input:required{
+            border: 1px solid red;
+        } 
+        
+        fieldset{
+             width:40%;
+            border-color: rgb(34, 33, 33);
+            border-radius: 25px;
+            
+        }
+        legend{
+            text-align: center;
+        }
+        select{
+            background-color: blueviolet;
+            width: 200px;
+            height: 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        input[type="radio"]:checked{
+            height: 20px;
+            width: 20px;
+        }
+        input[type="radio"]:checked+label{
+            color: rgb(143, 25, 88);
+            font-family:sans-serif;
+        }
+        input[readonly]{
+            background-color: rgb(205, 219, 191);
+            border: 2px dashed  rgb(31, 33, 31);
+            
+        }
+        input:optional{
+            border: 2px dashed rgb(44, 225, 44);
+        }
+        legend{
+            font-weight: 600;
+            font-family:cursive;
+        }
+        input{
+            background-color: rgb(195, 188, 179);
+        }
+        td{
+            padding: 5px;
+            
+        }
+        button:hover{
+            background-color: blueviolet;
+            cursor: pointer;
+            
+        }
+        input[type="submit"]:hover{
+          background-color: blueviolet;
+          cursor: pointer;
+        }
+        input[type="submit"]{
+            border:green;
+        }
+        .name{
+            display: none;
+            color: rgb(6, 33, 18);
+            background-color:antiquewhite ;
+        }
+        td:hover .name{
+            display: inline;
+        }
+        .number{
+            display: none;
+            background-color: antiquewhite;
+            color: rgb(6, 33, 18);
+        }
+        td:hover .number{
+            display: inline;
+        }
+        .mail{
+            display: none;
+            background-color: antiquewhite;
+            color: rgb(6, 33, 18);
+        }
+        td:hover .mail{
+            display: inline;
+        }
+        
+    </style>
+</head>
+<body>
+    <marquee behavior="" direction="right"><h1>Course Registration Form</h1></marquee>
+    <form action="">
+        <fieldset>
+            <legend>Personal Details</legend>
+    <table>
+        <tr>
+            <td><label for="">Name</label></td>
+            <td><input type="text" placeholder="Ex Hariprasad" required>
+            <p class="name">Enter your name</p></td>
+        </tr>
+        <tr>
+            <td><label for="">Surname</label></td>
+            <td><input type="text" placeholder="Ex Shyaga" optional></td>
+        </tr>
+        <tr>
+            <td><label for="">Mobile Number</label></td>
+            <td><input type="tel" required>
+            <p class="number">Enter mobile number</p></td>
+        </tr>
+        <tr>
+            <td><label for="">Email</label></td>
+            <td><input type="email"  placeholder=" hari@gmail.com" required>
+            <p class="mail">Enter your email</p></td>
+        </tr>
+        <tr>
+            <td><label for="">Age</label></td>
+            <td><input type="number" min="18" max="100" required>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="">Password</label></td>
+            <td><input type="password" placeholder="min 5 characters" required></td>
+        </tr>
+        <tr>
+            <td><label for="">Confirm Password</label></td>
+            <td><input type="password" placeholder="min 5 characters" required></td>
+        </tr>
+        <tr>
+            <td><label for="">DOB</label></td>
+            <td><input type="date" required></td>
+        </tr>
+        <tr>
+            <td><label for="gender">Gender</label></td>
+            <td><input type="radio" name="gender" value="Male">
+                 <label for="">Male</label>
+                 <input type="radio" name="gender" value="Female">
+                 <label for="">Female</label> 
+                 <input type="radio" name="gender" value="Others">
+                 <label for="">Others</label>    
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Country">Select Country</label></td>
+            <td><select name="Country" id="Country">
+                <option value="India">India</option>
+                <option value="America">America</option>
+                <option value="Africa">Africa</option>
+                <option value="Pakisthan">Pakisthan</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Canada">Canada</option>
+                <option value="Russia">Russia</option>
+                <option value="Germany">Germany</option>
+                <option value="Portugal">Portugal</option>
+                <option value="France">France</option>
+                <option value="Ireland">Ireland</option>
+            </td>
+            </select>
+        </tr>
+        <tr>
+            <td><label for="">Upload Picture</label></td>
+            <td><input type="file" optional></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="reset">Reset</button>
+            </td>
+        </tr>
+    </table>
+        </fieldset>
+        <fieldset>
+            <legend>Course Details</legend>
+            <label for="">Select Course</label>
+            <select name="course" id="course">
+                <option value="Python Fullstack">Python Full Stack</option>
+                <option value="Java Fullstack">Java Full Stack</option>
+                <option value=" Mern stack">MERN Stack</option>
+                <option value=" Mean stack">MEAN Stack</option>
+            </select><br><br>
+            <label for="mode">Delivery Mode</label>
+            <input type="radio" name="mode" value="online">
+            <label for="">Online</label>
+            <input type="radio" name="mode" value="offline">
+            <label for="">Offline</label><br><br>
+            <label for="">Institute Name</label>
+            <input type="text" value="TAP ACADEMY" readonly ><br><br>
+            <label for="">Comments</label><br>
+            <textarea name="" id="" rows="4" cols="41"></textarea>
+        </fieldset>
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
